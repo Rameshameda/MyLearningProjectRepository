@@ -21,5 +21,11 @@ public static void main(String[] args) {
     } else{
         System.out.println(false);
     }
+    
+    if (oneMillion_ == oneMillion){
+        System.out.println(true);
+    } else{
+        System.out.println(false);
+    }
 }
 }
