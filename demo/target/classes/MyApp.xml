@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+		<context:annotation-config/>
+		<bean class = "com.example.demo.test.InitHelloWorld" />
+	<bean id="constEmp" class="com.example.demo.Employee">
+		<constructor-arg name="empName"
+			value="Ramesha Meda Vishwanatha" />
+		<constructor-arg name="empId" value="1608" />
+		<constructor-arg name="address">
+			<ref bean="address" />
+		</constructor-arg>
+		<constructor-arg name="hobbies">
+			<list>
+				<value>Whats app</value>
+				<value>face book</value>
+				<value>tik tok</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="address" class="com.example.demo.Address">
+		<!-- <property name="address" value="manifest white orchid"></property> -->
+	</bean>
+	<bean id="quetion1" class="com.example.demo.Quetion">
+		<property name="question" value="what is your name?" />
+	</bean>
+	<bean id="quetion2" class="com.example.demo.Quetion">
+		<property name="question" value="where are you from?" />
+	</bean>
+	<bean id="quetion3" class="com.example.demo.Quetion">
+		<property name="question" value="whats your age?" />
+	</bean>
+	<bean id="answer1" class="com.example.demo.Answer">
+		<property name="answer" value="Ramesha M V"></property>
+	</bean>
+	<bean id="answer2" class="com.example.demo.Answer">
+		<property name="answer" value="M M Hills"></property>
+	</bean>
+	<bean id="answer3" class="com.example.demo.Answer">
+		<property name="answer" value="29"></property>
+	</bean>
+	<bean id="subject1" class="com.example.demo.Subject">
+		<property name="subjectName" value="Kannada" />
+	</bean>
+	<bean id="subject2" class="com.example.demo.Subject">
+		<property name="subjectName" value="English" />
+	</bean>
+	<bean id="subject3" class="com.example.demo.Subject">
+		<property name="subjectName" value="Hindi" />
+	</bean>
+	<bean id="student1" class="com.example.demo.Student">
+	<property name="studentName" value="Ramesha M V"></property>
+		<property name="subjects">
+			<list>
+				<ref bean="subject1" />
+				<ref bean="subject2" />
+				<ref bean="subject3" />
+			</list>
+		</property>
+		<property name="questionAns">
+			<map>
+				<entry key-ref="quetion1" value-ref="answer1"/>
+				<entry key-ref="quetion2" value-ref="answer2"/>
+				<entry key-ref="quetion3" value-ref="answer3"/>
+			</map>
+		</property>
+		<property name="teachSub">
+		<map>
+		<entry key="gn" value-ref="subject1" />
+		<entry key="sn" value-ref="subject2" />
+		<entry key="sb" value-ref="subject3" />
+		</map>
+		</property>
+	</bean>
+	<bean id="student2" class="com.example.demo.Student" parent="student1">
+	<property name="studentName" value="Rajendra Prasad"></property>
+	</bean>
+</beans>  
