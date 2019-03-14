@@ -1,0 +1,21 @@
+
+
+<web-app>
+   
+ <listener>
+        <listener-class>
+                com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+        </listener-class>
+    </listener>
+
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>myjaxws</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myjaxws</servlet-name>
+		<url-pattern>/bello</url-pattern>
+	</servlet-mapping>
+</web-app>
